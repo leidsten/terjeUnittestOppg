@@ -1,0 +1,29 @@
+Ta utgangspunkt i denne funksjonen: 
+function count(text, countLetter) {
+    let count = 0;
+    for (let letter of text) {
+        if (letter == countLetter) {
+            count++;
+        }
+    }
+    return count;
+}
+
+Den teller forekomster av en bestemt bokstav i en tekst. 
+Første skritt er at du lager unit tester som sjekker om denne virker som den skal. 
+Prøv å tenke kvalitetssikring av denne funksjonen. 
+
+Hva kan gå galt? Skriv en unit test for det. 
+I noen tilfeller vil du finne ut at funksjonen ikke gjør det man skulle ønske. 
+Da kan du velge hvordan du vil den skal oppføre seg - og endre koden til funksjonen
+
+Når du har en første versjon klar, sender du til meg for tilbakemelding. 
+Jeg ser både på det du har gjort - og gir ev. noen tips om hva som mangler.
+
+Når testene er gode og koden er god, kan du lage en videoleksjon om unit testing 
+hvor du starter med funksjonen sånn som den er over - og forklarer de ulike testene 
+og hvordan du forbedrer funksjonen
+
+Etter det igjen, kan du kanskje prøve å lage en tilsvarende oppgave til studentene.
+ Den kan godt være ganske detaljert - altså at du forklarer dem hva de skal gjøre med ord. 
+ Litt som feks flaggoppgaven min: getacademy.moodlecloud.com/mod/page/view.php?id=1020

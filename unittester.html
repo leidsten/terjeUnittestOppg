@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>QUnit Example</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.9.2.css">
+</head>
+
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script>
+    <script src="letterCounter.js"></script>
+    <script>
+        QUnit.test("Counting letters correctly? - all small, all letters", function (assert) {
+            const actual = count("appelsinmarmelade", "a");
+            const expected = 3;
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test("Should also count capital letters", function (assert) {
+            const actual = count("AppelsinmarmelAde", "a");
+            const expected = 3;
+            assert.equal(actual, expected);
+        });
+
+
+        QUnit.test("Should not count numbers", function (assert) {
+            const actual = count("123appelsinmarmelade456", 3);
+            const expected = "Can only count letters. Try again.";
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test("Should not count symbols", function (assert) {
+            const actual = count("¤¤appelsin!!!marmelade%%", "%");
+            const expected = "Can only count letters. Try again.";
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test("Should not count spaces", function (assert) {
+            const actual = count(" appelsin marmelade ", " ");
+            const expected = "Can only count letters. Try again.";
+            assert.equal(actual, expected);
+        });
+
+
+    </script>
+</body>
+
+</html>
