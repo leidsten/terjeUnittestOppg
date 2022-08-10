@@ -1,8 +1,8 @@
 function count(text, countLetter) {
     text = text.toLowerCase();
-    countLetter = countLetter.toLowerCase();
     let count = 0;
     if(checkIfLetter(countLetter)){
+        countLetter = countLetter.toLowerCase();
         for (let letter of text) {
             if (letter == countLetter) {
                 count++;
