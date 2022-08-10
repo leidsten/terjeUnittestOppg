@@ -2,7 +2,7 @@ function count(text, countLetter) {
     text = text.toLowerCase();
     let count = 0;
     if(checkIfLetter(countLetter)){
-        countLetter = countLetter.toLowerCase();
+       countLetter = countLetter.toLowerCase();
         for (let letter of text) {
             if (letter == countLetter) {
                 count++;
@@ -15,8 +15,13 @@ function count(text, countLetter) {
 }
 
 function checkIfLetter(character){
-  // return character.toUpperCase() != character.toLowerCase()   -- ditch dette, sjekk ascii
-    return character >= 'a' &&  character <= 'z' || character == 'æ' || character == 'ø' || character == 'å';
+    // character = character.toLowerCase();
+  // return character.toUpperCase() != character.toLowerCase()   -- ditch dette
+    return character >= 'a' &&  character <= 'z' || 
+    character >= 'A' &&  character <= 'Z' ||
+    character == 'æ' || character == 'Æ' || 
+    character == 'ø' || character == 'Ø' || 
+    character == 'å' || character == 'Å' ;
 
 }
 

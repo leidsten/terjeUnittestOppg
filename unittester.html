@@ -26,6 +26,12 @@
             assert.equal(actual, expected);
         });
 
+        QUnit.test("Not caring if checking for capital or lowercase letter in string", function (assert) {
+            const actual = count("AppelsinmarmelAde", "A");
+            const expected = 3;
+            assert.equal(actual, expected);
+        });
+
 
         QUnit.test("Should not count numbers", function (assert) {
             const actual = count("123appelsinmarmelade456", 3);
