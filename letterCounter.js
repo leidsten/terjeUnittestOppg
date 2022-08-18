@@ -1,17 +1,16 @@
 let charCount = 0;
 function count(text, countLetter) {
-    if(!checkIfNullOrUndefined(countLetter)) return null;
-    
-    text = text.toLowerCase();
     charCount = 0;
+    if(!checkIfNullOrUndefined(countLetter)) return null;
+
+    text = text.toLowerCase();
     countLetter = countLetter.toLowerCase();
+
     if (checkIfLetter(countLetter)) {
-        searchForCharacter(countLetter, text)
-        console.log("i if")
+        searchForCharacter(countLetter, text);
     }
     else {
-        searchForCharacter(countLetter, text)
-        console.log("i else")
+        searchForCharacter(countLetter, text);
     }
 
     return charCount;
@@ -33,7 +32,6 @@ function searchForCharacter(characterToFind, text){
 
 
 function checkIfLetter(character) {
-    // character = character.toLowerCase();
     return character >= 'a' && character <= 'z' ||
         character >= 'A' && character <= 'Z' ||
         character == 'æ' || character == 'Æ' ||
@@ -41,9 +39,3 @@ function checkIfLetter(character) {
         character == 'å' || character == 'Å';
 
 }
-
-
-// Hva kan gå galt?
-//stor bokstav -V, tall-V, symbol -V, space -V
-
-//
