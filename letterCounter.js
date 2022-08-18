@@ -1,27 +1,44 @@
+let charCount = 0;
 function count(text, countLetter) {
+    if(!checkIfNullOrUndefined(countLetter)) return null;
+    
     text = text.toLowerCase();
-    let count = 0;
-    if(checkIfLetter(countLetter)){
-       countLetter = countLetter.toLowerCase();
-        for (let letter of text) {
-            if (letter == countLetter) {
-                count++;
-            }
-        }
-        return count;
-
+    charCount = 0;
+    countLetter = countLetter.toLowerCase();
+    if (checkIfLetter(countLetter)) {
+        searchForCharacter(countLetter, text)
+        console.log("i if")
     }
-    else return "Can only count letters. Try again.";
+    else {
+        searchForCharacter(countLetter, text)
+        console.log("i else")
+    }
+
+    return charCount;
+
 }
 
-function checkIfLetter(character){
+function checkIfNullOrUndefined(countLetter){
+    if(countLetter != null || countLetter != undefined)return true;
+    return false;
+}
+
+function searchForCharacter(characterToFind, text){
+    for (let character of text) {
+        if (character == characterToFind) {
+            charCount++;
+        }
+    }
+}
+
+
+function checkIfLetter(character) {
     // character = character.toLowerCase();
-  // return character.toUpperCase() != character.toLowerCase()   -- ditch dette
-    return character >= 'a' &&  character <= 'z' || 
-    character >= 'A' &&  character <= 'Z' ||
-    character == 'æ' || character == 'Æ' || 
-    character == 'ø' || character == 'Ø' || 
-    character == 'å' || character == 'Å' ;
+    return character >= 'a' && character <= 'z' ||
+        character >= 'A' && character <= 'Z' ||
+        character == 'æ' || character == 'Æ' ||
+        character == 'ø' || character == 'Ø' ||
+        character == 'å' || character == 'Å';
 
 }
 

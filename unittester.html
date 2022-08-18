@@ -20,36 +20,64 @@
             assert.equal(actual, expected);
         });
 
-        QUnit.test("Should also count capital letters", function (assert) {
+        QUnit.test("Not caring if checking for capital or lowercase letter in string - lowercase letter search", function (assert) {
             const actual = count("AppelsinmarmelAde", "a");
             const expected = 3;
             assert.equal(actual, expected);
         });
 
-        QUnit.test("Not caring if checking for capital or lowercase letter in string", function (assert) {
+    
+        QUnit.test("Not caring if checking for capital or lowercase letter in string - uppercase letter search", function (assert) {
             const actual = count("AppelsinmarmelAde", "A");
             const expected = 3;
             assert.equal(actual, expected);
         });
 
-
-        QUnit.test("Should not count numbers", function (assert) {
-            const actual = count("123appelsinmarmelade456", 3);
-            const expected = "Can only count letters. Try again.";
+        
+        QUnit.test("Should search for symbols as well", function (assert) {
+            const actual = count("Appelsinmarmelade!!", "!");
+            const expected = 2;
             assert.equal(actual, expected);
         });
 
-        QUnit.test("Should not count symbols", function (assert) {
-            const actual = count("¤¤appelsin!!!marmelade%%", "%");
-            const expected = "Can only count letters. Try again.";
+        QUnit.test("Should search for numbers as well", function (assert) {
+            const actual = count("11Appelsinmarmelade11", "1");
+            const expected = 4;
             assert.equal(actual, expected);
         });
 
-        QUnit.test("Should not count spaces", function (assert) {
+        QUnit.test("Should also count spaces", function (assert) {
             const actual = count(" appelsin marmelade ", " ");
-            const expected = "Can only count letters. Try again.";
+            const expected = 3;
             assert.equal(actual, expected);
         });
+
+        QUnit.test("Should output null when getting null", function (assert) {
+            const actual = count(" appelsin marmelade ", null);
+            const expected = null;
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test("Should output null when getting undefined", function (assert) {
+            const actual = count(" appelsin marmelade ", undefined);
+            const expected = null;
+            assert.equal(actual, expected);
+        });
+
+
+        // QUnit.test("Should not count numbers", function (assert) {
+        //     const actual = count("123appelsinmarmelade456", 3);
+        //     const expected = null;
+        //     assert.equal(actual, expected);
+        // });
+
+        // QUnit.test("Should not count symbols", function (assert) {
+        //     const actual = count("¤¤appelsin!!!marmelade%%", "%");
+        //     const expected = null;
+        //     assert.equal(actual, expected);
+        // });
+
+       
 
 
     </script>
