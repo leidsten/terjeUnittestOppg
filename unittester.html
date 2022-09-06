@@ -64,18 +64,27 @@
             assert.equal(actual, expected);
         });
 
+        QUnit.test("No such letters found in the searchtext", function (assert) {
+            const actual = count("appelsin marmelade", "æ");
+            const expected = 0;
+            assert.equal(actual, expected);
+        });
 
-        // QUnit.test("Should not count numbers", function (assert) {
-        //     const actual = count("123appelsinmarmelade456", 3);
-        //     const expected = null;
-        //     assert.equal(actual, expected);
-        // });
+        QUnit.test("Count letter in empty text", function (assert) {
+            const actual = count(" ", "a");
+            const expected = 0;
+            assert.equal(actual, expected);
+        });
 
-        // QUnit.test("Should not count symbols", function (assert) {
-        //     const actual = count("¤¤appelsin!!!marmelade%%", "%");
-        //     const expected = null;
-        //     assert.equal(actual, expected);
-        // });
+        
+        QUnit.test("Count spaces in empty text", function (assert) {
+            const actual = count("   ", " ");
+            const expected = 3;
+            assert.equal(actual, expected);
+        });
+
+
+        
 
        
 
