@@ -27,3 +27,7 @@ og hvordan du forbedrer funksjonen
 Etter det igjen, kan du kanskje prøve å lage en tilsvarende oppgave til studentene.
  Den kan godt være ganske detaljert - altså at du forklarer dem hva de skal gjøre med ord. 
  Litt som feks flaggoppgaven min: getacademy.moodlecloud.com/mod/page/view.php?id=1020
+
+- legg til test hvor svaret skal være tallet 0
+- telle i tom tekst
+- null og undefined som input tekst
