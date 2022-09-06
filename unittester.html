@@ -52,13 +52,13 @@
             assert.equal(actual, expected);
         });
 
-        QUnit.test("Should output null when getting null", function (assert) {
+        QUnit.test("Should output null when letter is null", function (assert) {
             const actual = count(" appelsin marmelade ", null);
             const expected = null;
             assert.equal(actual, expected);
         });
 
-        QUnit.test("Should output null when getting undefined", function (assert) {
+        QUnit.test("Should output null when letter is undefined", function (assert) {
             const actual = count(" appelsin marmelade ", undefined);
             const expected = null;
             assert.equal(actual, expected);
@@ -84,7 +84,35 @@
         });
 
 
-        
+        QUnit.test("Should output null when string is null", function (assert) {
+            const actual = count(null, "a" );
+            const expected = null;
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test("Should output null when string is undefined", function (assert) {
+            const actual = count(undefined, "a");
+            const expected = null;
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test("Should output null when everything is undefined", function (assert) {
+            const actual = count(undefined, undefined);
+            const expected = null;
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test("Should output null when everything is null", function (assert) {
+            const actual = count(null, null);
+            const expected = null;
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test("Should output 0 when everything is blank", function (assert) {
+            const actual = count("", "");
+            const expected = 0;
+            assert.equal(actual, expected);
+        });
 
        
 

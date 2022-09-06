@@ -1,7 +1,8 @@
 function count(text, countLetter) {
     let charCount = 0;
    
-    if (!checkIfNullOrUndefined(countLetter))return null;
+    if (!checkIfLetterNullOrUndefined(countLetter))return null;
+    if(!checkIfTextNullOrUndefined(text)) return null;
     
     text = text.toLowerCase();
     countLetter = countLetter.toLowerCase();
@@ -13,11 +14,14 @@ function count(text, countLetter) {
     return charCount;
 }
 
-function checkIfNullOrUndefined(countLetter) {
+function checkIfLetterNullOrUndefined(countLetter) {
     if (countLetter != null || countLetter != undefined)return true; 
     return false; 
 }
-
+function checkIfTextNullOrUndefined(text) {
+    if (text != null || text != undefined)return true; 
+    return false; 
+}
 // function checkIfNullOrUndefined(countLetter) {
 //     return countLetter === null && countLetter === undefined;
 // }
