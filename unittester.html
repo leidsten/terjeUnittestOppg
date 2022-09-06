@@ -64,20 +64,20 @@
             assert.equal(actual, expected);
         });
 
-        QUnit.test("No such letters found in the searchtext", function (assert) {
+        QUnit.test("No such letters found in the string", function (assert) {
             const actual = count("appelsin marmelade", "æ");
             const expected = 0;
             assert.equal(actual, expected);
         });
 
-        QUnit.test("Count letter in empty searchtext", function (assert) {
+        QUnit.test("Count letter in empty string", function (assert) {
             const actual = count(" ", "a");
             const expected = 0;
             assert.equal(actual, expected);
         });
 
         
-        QUnit.test("Count spaces in empty text", function (assert) {
+        QUnit.test("Count spaces in empty string", function (assert) {
             const actual = count("   ", " ");
             const expected = 3;
             assert.equal(actual, expected);
