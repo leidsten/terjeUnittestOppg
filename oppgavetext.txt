@@ -9,7 +9,7 @@ function count(text, countLetter) {
     return count;
 }
 
-Den teller forekomster av en bestemt bokstav i en tekst. 
+Den teller forekomster av en bestemt bokstav/tall/symbol etc i en tekst. 
 Første skritt er at du lager unit tester som sjekker om denne virker som den skal. 
 Prøv å tenke kvalitetssikring av denne funksjonen. 
 

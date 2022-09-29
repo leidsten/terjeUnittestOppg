@@ -1,0 +1,39 @@
+Ta utgangspunkt i denne funksjonen: 
+
+function count(text, countLetter) {
+    let count = 0;
+    for (let letter of text) {
+        if (letter == countLetter) {
+            count++;
+        }
+    }
+    return count;
+}
+
+
+Funksjonen teller forekomster av en bestemt bokstav, tall, symbol eller mellomrom.
+Teksten den skal telle i kommer inn som parameteret "text" og hva den skal telle i Teksten
+kommer inn som "countLetter".
+
+Oppgaven er å finne ut om denne fungerer som den skal - ved hjelp av unit tester.
+Ha et fokus mot å tenkte kvalitetssikring av funksjonen: 
+Hva kan gå galt? Hva burde fungere?
+Lag tester for alle disse scenarioene.
+
+Noen ganger vil ikke funksjonen gjøre det man skulle ønske.
+Endre og/eller legg da til kode som gjør at den oppfører seg slik du vil.
+
+
+Lag unit tester som tester:
+ - Bokstaver telles, uavhenging av stor eller liten bokstav - både tekst og bokstav som skal finnes skal ignorere dette
+ - Søker man etter en bokstav/tall/symbol som ikke finnes i teksten skal "0" outputtes
+ - Søker man etter en bokstav/tall/symbol i en tom tekst skal "0" outputtes
+ - Symboler telles
+ - Tall telles
+ - Space telles
+ - Om man ikke sender inn bokstav/tall/symbol å søke etter skal "null" outputtes
+ - Om man sender inn undefined bokstav/tall/symbol skal "null" outputtes
+ - Om man søker etter space i en tekst bestående av flere spaces skal disse telles
+ - Om teksten er null eller undefined skal "null" outputtes
+ - Om både tekst og bokstav/tall/symbol som sendes inn er null eller undefined skal "null" outputtes
+ - Om alt er blank string skal "0" outputtes
